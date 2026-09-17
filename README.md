@@ -27,6 +27,12 @@ Express API and an in-memory PostgreSQL-compatible database.
    `npm run dev`
 3. Open [http://localhost:3000](http://localhost:3000)
 
+## Available scripts
+
+- `npm run dev` starts the development server.
+- `npm run lint` runs the TypeScript check.
+- `npm run build` creates the production bundle.
+
 ## Demo accounts
 
 - Admin: `admin@ems.demo` / `admin123`
