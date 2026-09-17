@@ -36,6 +36,11 @@ same origin.
 - `npm run lint` runs the TypeScript check.
 - `npm run build` creates the production bundle.
 
+## Reports
+
+The Reports page summarizes workforce status, department headcount, salary
+averages, attendance distribution, and leave approvals.
+
 ## Admin workspace
 
 Administrators can manage employees, departments, attendance, leave approvals,
