@@ -10,6 +10,13 @@ attendance, leave requests, salary records, and analytical reports.
 The application includes separate Admin and Employee workspaces backed by an
 Express API and an in-memory PostgreSQL-compatible database.
 
+## Features
+
+- Employee and department management
+- Attendance and leave workflows
+- Salary records and printable salary slips
+- Workforce analytics and CSV export
+
 ## Run Locally
 
 **Prerequisites:** Node.js 18 or newer
