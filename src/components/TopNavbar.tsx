@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, Bell, Search, UserCircle2, ChevronDown, Shield, UserCheck, RefreshCw } from 'lucide-react';
+import { Menu, Bell, ChevronDown, Shield, UserCheck, RefreshCw } from 'lucide-react';
 import { User } from '../types.ts';
 
 interface TopNavbarProps {
@@ -48,11 +48,12 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
   const isAdmin = currentUser?.role === 'Admin';
 
   return (
-    <header id="top-navbar" className="h-16 bg-white border-b border-slate-200 sticky top-0 z-30 px-4 sm:px-6 flex items-center justify-between">
+    <header id="top-navbar" className="min-h-16 bg-white border-b border-slate-200 sticky top-0 z-30 px-3 sm:px-6 py-2 flex items-center justify-between gap-2">
       {/* Left Title & Mobile Menu */}
       <div className="flex items-center space-x-3 sm:space-x-4">
         <button
           id="mobile-menu-toggle-btn"
+          type="button"
           onClick={onOpenSidebar}
           className="lg:hidden p-2 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-100"
           aria-label="Open sidebar"
@@ -70,6 +71,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
         {/* Quick Refresh Button */}
         <button
           id="topbar-refresh-btn"
+          type="button"
           onClick={onRefreshData}
           title="Refresh data from database"
           className="p-2 rounded-xl text-slate-500 hover:text-blue-600 hover:bg-slate-100 transition-colors"
@@ -81,6 +83,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
         <div className="relative">
           <button
             id="topbar-notifications-btn"
+            type="button"
             onClick={() => setNotifOpen(!notifOpen)}
             className="p-2 rounded-xl text-slate-500 hover:text-blue-600 hover:bg-slate-100 relative transition-colors"
             aria-label="Notifications"
@@ -94,7 +97,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
           {notifOpen && (
             <div
               id="topbar-notifications-popover"
-              className="absolute right-0 mt-2 w-72 bg-white rounded-2xl shadow-xl border border-slate-200 py-3 z-50 animate-in fade-in slide-in-from-top-2 duration-150"
+              className="absolute right-0 mt-2 w-[min(18rem,calc(100vw-1.5rem))] bg-white rounded-2xl shadow-xl border border-slate-200 py-3 z-50 animate-in fade-in slide-in-from-top-2 duration-150"
             >
               <div className="px-4 pb-2 border-b border-slate-100 flex items-center justify-between">
                 <span className="font-semibold text-xs text-slate-700">Notifications</span>
@@ -122,6 +125,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
         <div className="hidden sm:flex items-center bg-slate-100 p-1 rounded-xl border border-slate-200">
           <button
             id="quick-role-admin-btn"
+            type="button"
             onClick={() => onQuickRoleSwitch('Admin')}
             className={`flex items-center space-x-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold transition-all ${
               isAdmin
@@ -134,6 +138,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
           </button>
           <button
             id="quick-role-employee-btn"
+            type="button"
             onClick={() => onQuickRoleSwitch('Employee')}
             className={`flex items-center space-x-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold transition-all ${
               !isAdmin
@@ -150,6 +155,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
         <div className="relative">
           <button
             id="user-profile-menu-btn"
+            type="button"
             onClick={() => setDropdownOpen(!dropdownOpen)}
             className="flex items-center space-x-2.5 pl-2 pr-3 py-1.5 rounded-xl hover:bg-slate-100 transition-colors border border-slate-200/60"
           >
@@ -166,7 +172,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
           {dropdownOpen && (
             <div
               id="user-profile-dropdown"
-              className="absolute right-0 mt-2 w-60 bg-white rounded-2xl shadow-xl border border-slate-200 py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150"
+              className="absolute right-0 mt-2 w-[min(15rem,calc(100vw-1.5rem))] bg-white rounded-2xl shadow-xl border border-slate-200 py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150"
             >
               <div className="px-4 py-2 border-b border-slate-100">
                 <p className="text-xs font-bold text-slate-800">{currentUser?.name}</p>
@@ -179,6 +185,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                 <p className="px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">Quick Switch Demo</p>
                 <button
                   id="dropdown-switch-admin"
+                  type="button"
                   onClick={() => {
                     onQuickRoleSwitch('Admin');
                     setDropdownOpen(false);
@@ -190,6 +197,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                 </button>
                 <button
                   id="dropdown-switch-employee"
+                  type="button"
                   onClick={() => {
                     onQuickRoleSwitch('Employee');
                     setDropdownOpen(false);

@@ -147,6 +147,7 @@ export const EmployeeModal: React.FC<EmployeeModalProps> = ({
           </div>
           <button
             id="employee-modal-close-btn"
+            type="button"
             onClick={onClose}
             className="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors"
           >

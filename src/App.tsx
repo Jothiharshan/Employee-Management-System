@@ -384,7 +384,7 @@ export default function App() {
   const nextSuggestedId = `EMP${(employees.length + 1).toString().padStart(3, '0')}`;
 
   return (
-    <div className="min-h-screen bg-slate-50/50 flex font-sans antialiased text-slate-900">
+    <div className="min-h-screen overflow-x-hidden bg-slate-50/50 flex font-sans antialiased text-slate-900">
       {/* Sidebar Navigation */}
       <Sidebar
         activeTab={activeTab}
@@ -412,7 +412,7 @@ export default function App() {
           onRefreshData={loadData}
         />
 
-        <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto space-y-4">
+        <main className="flex-1 min-w-0 p-3 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto space-y-4">
           {/* Access Denied Banner */}
           {accessDeniedMessage && (
             <div
@@ -424,6 +424,7 @@ export default function App() {
                 <span className="font-semibold">{accessDeniedMessage}</span>
               </div>
               <button
+                type="button"
                 onClick={() => setAccessDeniedMessage(null)}
                 className="text-rose-600 hover:text-rose-800 font-bold ml-4"
               >

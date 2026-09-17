@@ -153,6 +153,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   <div key={item.id} className="space-y-1">
                     <button
                       id={`nav-item-${item.id}`}
+                      type="button"
                       onClick={() => {
                         setActiveTab(item.id);
                         setEmployeesSubmenuOpen(!employeesSubmenuOpen);
@@ -178,6 +179,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                       <div className="pl-9 pr-2 py-1 space-y-1 border-l-2 border-slate-100 ml-4">
                         <button
                           id="nav-subitem-all-employees"
+                          type="button"
                           onClick={() => {
                             setActiveTab('employees');
                             onClose();
@@ -192,6 +194,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                         </button>
                         <button
                           id="nav-subitem-add-employee"
+                          type="button"
                           onClick={() => {
                             if (onAddEmployee) onAddEmployee();
                             onClose();
@@ -211,6 +214,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 <button
                   key={item.id}
                   id={`nav-item-${item.id}`}
+                  type="button"
                   onClick={() => {
                     setActiveTab(item.id);
                     onClose();
@@ -239,6 +243,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         <div className="p-4 border-t border-slate-100 space-y-1">
           <button
             id="nav-item-settings"
+            type="button"
             onClick={() => {
               setActiveTab(isAdmin ? 'settings' : 'my_settings');
               onClose();
@@ -257,6 +262,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
           <button
             id="nav-item-logout"
+            type="button"
             onClick={onLogout}
             className="w-full flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-sm font-medium text-rose-600 hover:bg-rose-50 transition-colors text-left"
           >

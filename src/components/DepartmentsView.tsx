@@ -214,7 +214,7 @@ export const DepartmentsView: React.FC<DepartmentsViewProps> = ({
               <h3 className="text-sm font-bold text-slate-900">
                 {editingDept ? 'Edit Department' : 'Create New Department'}
               </h3>
-              <button onClick={() => setModalOpen(false)} className="p-1 text-slate-400 hover:text-slate-600">
+              <button type="button" onClick={() => setModalOpen(false)} className="p-1 text-slate-400 hover:text-slate-600">
                 <X className="w-5 h-5" />
               </button>
             </div>
@@ -310,12 +310,14 @@ export const DepartmentsView: React.FC<DepartmentsViewProps> = ({
             )}
             <div className="flex justify-end space-x-2">
               <button
+                type="button"
                 onClick={() => setDeleteTarget(null)}
                 className="px-3.5 py-1.5 rounded-xl text-xs font-semibold text-slate-600 hover:bg-slate-100"
               >
                 Cancel
               </button>
               <button
+                type="button"
                 onClick={handleDelete}
                 className="px-4 py-1.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold"
               >
