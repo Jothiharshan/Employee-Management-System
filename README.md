@@ -44,6 +44,11 @@ workspace.
 Employees can view their profile, attendance, leave balance, salary details,
 notifications, and personal dashboard without accessing administrative data.
 
+## Authentication
+
+The demo server provides seeded Admin and Employee sessions for local
+development. Session tokens are stored in the browser's local storage.
+
 ## Demo accounts
 
 - Admin: `admin@ems.demo` / `admin123`
