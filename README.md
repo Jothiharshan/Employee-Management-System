@@ -39,6 +39,11 @@ Administrators can manage employees, departments, attendance, leave approvals,
 salary records, reports, and application settings from the organization
 workspace.
 
+## Employee workspace
+
+Employees can view their profile, attendance, leave balance, salary details,
+notifications, and personal dashboard without accessing administrative data.
+
 ## Demo accounts
 
 - Admin: `admin@ems.demo` / `admin123`
