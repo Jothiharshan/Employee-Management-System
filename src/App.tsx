@@ -53,7 +53,12 @@ const pathToTab: Record<string, string> = {
   '/employee/settings': 'my_settings'
 };
 
-const appBasePath = (import.meta as ImportMeta & { env: { BASE_URL: string } }).env.BASE_URL.replace(/\/$/, '');
+const configuredBasePath = (import.meta as ImportMeta & { env: { BASE_URL: string } }).env.BASE_URL.replace(/\/$/, '');
+const assetScriptPath = typeof document !== 'undefined'
+  ? document.querySelector('script[type="module"][src]')?.getAttribute('src') || ''
+  : '';
+const deployedBasePath = assetScriptPath.match(/^(.*)\/assets\//)?.[1] || '';
+const appBasePath = configuredBasePath || deployedBasePath;
 
 export default function App() {
   // Session & User state with persistence
