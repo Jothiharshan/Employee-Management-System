@@ -1,0 +1,6 @@
+{
+  "name": "Employee Management System",
+  "description": "Full-stack Employee Management System with PostgreSQL relational tables, Express REST APIs, employee CRUD, departments, attendance, leave management, and salary reporting.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
