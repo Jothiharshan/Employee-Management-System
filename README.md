@@ -2,19 +2,33 @@
 <img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
 </div>
 
-# Run and deploy your AI Studio app
+# Employee Management System
 
-This contains everything you need to run your app locally.
+An employee management portal for handling workforce records, departments,
+attendance, leave requests, salary records, and analytical reports.
 
-View your app in AI Studio: https://ai.studio/apps/e587060f-4ca3-4928-b6a7-4c2b4561681d
+The application includes separate Admin and Employee workspaces backed by an
+Express API and an in-memory PostgreSQL-compatible database.
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
-
+**Prerequisites:** Node.js 18 or newer
 
 1. Install dependencies:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
+2. Start the development server:
    `npm run dev`
+3. Open [http://localhost:3000](http://localhost:3000)
+
+## Demo accounts
+
+- Admin: `admin@ems.demo` / `admin123`
+- Employee: `employee@ems.demo` / `employee123`
+
+## Validation
+
+Run the TypeScript check with:
+
+```bash
+npm run lint
+```
