@@ -33,6 +33,12 @@ Express API and an in-memory PostgreSQL-compatible database.
 - `npm run lint` runs the TypeScript check.
 - `npm run build` creates the production bundle.
 
+## Admin workspace
+
+Administrators can manage employees, departments, attendance, leave approvals,
+salary records, reports, and application settings from the organization
+workspace.
+
 ## Demo accounts
 
 - Admin: `admin@ems.demo` / `admin123`
