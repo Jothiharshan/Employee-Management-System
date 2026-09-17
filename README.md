@@ -27,6 +27,9 @@ Express API and an in-memory PostgreSQL-compatible database.
    `npm run dev`
 3. Open [http://localhost:3000](http://localhost:3000)
 
+The development server serves both the React interface and the API from the
+same origin.
+
 ## Available scripts
 
 - `npm run dev` starts the development server.
