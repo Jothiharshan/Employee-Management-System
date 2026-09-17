@@ -47,12 +47,33 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 }) => {
   const isAdmin = currentUser?.role === 'Admin';
 
-  if (loading || !stats) {
+  if (loading) {
     return (
       <div className="p-6 flex items-center justify-center min-h-[400px]">
         <div className="flex flex-col items-center space-y-3">
           <div className="w-8 h-8 border-3 border-blue-600 border-t-transparent rounded-full animate-spin" />
           <p className="text-xs text-slate-500 font-medium">Loading database statistics...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!stats) {
+    return (
+      <div className="p-6 flex items-center justify-center min-h-[400px]">
+        <div className="max-w-md rounded-3xl border border-amber-200 bg-amber-50 p-6 text-center">
+          <AlertCircle className="mx-auto mb-3 h-8 w-8 text-amber-600" />
+          <h2 className="text-sm font-bold text-amber-950">Dashboard data is unavailable</h2>
+          <p className="mt-2 text-xs leading-relaxed text-amber-800">
+            The GitHub Pages frontend is loaded, but its Express API must be hosted separately for live data.
+          </p>
+          <button
+            type="button"
+            onClick={() => window.location.reload()}
+            className="mt-4 rounded-xl bg-amber-600 px-4 py-2 text-xs font-semibold text-white hover:bg-amber-700"
+          >
+            Try again
+          </button>
         </div>
       </div>
     );
