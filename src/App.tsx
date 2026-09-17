@@ -53,6 +53,8 @@ const pathToTab: Record<string, string> = {
   '/employee/settings': 'my_settings'
 };
 
+const appBasePath = (import.meta as ImportMeta & { env: { BASE_URL: string } }).env.BASE_URL.replace(/\/$/, '');
+
 export default function App() {
   // Session & User state with persistence
   const [currentUser, setCurrentUser] = useState<User | null>(() => {
@@ -93,7 +95,10 @@ export default function App() {
 
   // Active navigation tab
   const [activeTab, setActiveTab] = useState<string>(() => {
-    const requestedTab = typeof window !== 'undefined' ? pathToTab[window.location.pathname] : undefined;
+    const requestedPath = typeof window !== 'undefined'
+      ? window.location.pathname.slice(appBasePath.length) || '/'
+      : '/';
+    const requestedTab = pathToTab[requestedPath];
     const isEmployeeTab = requestedTab?.startsWith('my_');
     if (requestedTab && ((currentUser?.role === 'Employee') === isEmployeeTab)) {
       return requestedTab;
@@ -220,7 +225,7 @@ export default function App() {
     const newPath = tabToPathMap[activeTab];
     if (newPath && window.location.pathname !== newPath) {
       try {
-        window.history.replaceState(null, '', newPath);
+        window.history.replaceState(null, '', `${appBasePath}${newPath}`);
       } catch (e) {
         // Safe fallback in restricted sandboxes
       }
