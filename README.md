@@ -75,3 +75,5 @@ Run the TypeScript check with:
 ```bash
 npm run lint
 ```
+
+The project uses TypeScript, React, Express, Vite, and Tailwind CSS.
