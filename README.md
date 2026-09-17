@@ -41,6 +41,9 @@ same origin.
 The Reports page summarizes workforce status, department headcount, salary
 averages, attendance distribution, and leave approvals.
 
+Reports can be exported as CSV files for spreadsheet analysis or printed as a
+PDF from the browser print dialog.
+
 ## Admin workspace
 
 Administrators can manage employees, departments, attendance, leave approvals,
