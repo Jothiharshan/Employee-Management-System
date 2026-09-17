@@ -49,6 +49,9 @@ notifications, and personal dashboard without accessing administrative data.
 The demo server provides seeded Admin and Employee sessions for local
 development. Session tokens are stored in the browser's local storage.
 
+For production deployments, replace the demo credentials and use a persistent
+database and secure session management.
+
 ## Demo accounts
 
 - Admin: `admin@ems.demo` / `admin123`
